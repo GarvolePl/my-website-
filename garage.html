@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Garage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #004d00, #00ff00);
+            color: limegreen;
+            text-align: center;
+        }
+
+        .ribbon {
+            background-color: #222;
+            color: limegreen;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ribbon a {
+            color: limegreen;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .garage-cars {
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background: #222;
+            border: 2px solid limegreen;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ribbon">
+        <a href="index.html">Home</a>
+        <a href="car-collection.html">Car Collection</a>
+        <a href="garage.html">My Garage</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <h1>Your Garage</h1>
+    <div class="garage-cars">
+        <!-- Cars added to the garage will be displayed here -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const garage = JSON.parse(localStorage.getItem('garage')) || [];
+            const garageCars = document.querySelector('.garage-cars');
+            if (garage.length > 0) {
+                garageCars.innerHTML = `<ul>${garage.map(car => `<li>${car}</li>`).join('')}</ul>`;
+            } else {
+                garageCars.textContent = 'No cars added yet. Go back and add some!';
+            }
+        });
+    </script>
+</body>
+</html>
+

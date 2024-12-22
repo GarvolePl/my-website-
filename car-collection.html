@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Collection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #004d00, #00ff00);
+            color: limegreen;
+            text-align: center;
+        }
+
+        .ribbon {
+            background-color: #222;
+            color: limegreen;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ribbon a {
+            color: limegreen;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        .collection {
+            padding: 40px 20px;
+        }
+
+        .collection h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #222;
+            border: 2px solid limegreen;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: left;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .card button {
+            background-color: limegreen;
+            color: black;
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ribbon">
+    <a href="index.html">Home</a>
+    <a href="garage.html">My Garage</a>
+    <a href="race.html">Race Track</a>
+</div>
+
+<section class="collection">
+    <h2>Select Your Car</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Turbo Blast</h3>
+            <p>High-speed classic car with neon finishes.</p>
+            <button onclick="addToGarage('Turbo Blast')">Add to Garage</button>
+            <button onclick="startRace('Turbo Blast')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Classic Racer</h3>
+            <p>A vintage car built for nostalgia.</p>
+            <button onclick="addToGarage('Classic Racer')">Add to Garage</button>
+            <button onclick="startRace('Classic Racer')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Off-Road Monster</h3>
+            <p>Perfect for rugged terrains and wild adventures.</p>
+            <button onclick="addToGarage('Off-Road Monster')">Add to Garage</button>
+            <button onclick="startRace('Off-Road Monster')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Supercharged Racer</h3>
+            <p>Top-speed racer with cutting-edge aerodynamics.</p>
+            <button onclick="addToGarage('Supercharged Racer')">Add to Garage</button>
+            <button onclick="startRace('Supercharged Racer')">Race!</button>
+        </div>
+        <!-- Add more cars as needed -->
+    </div>
+</section>
+
+<script>
+    const garage = [];
+
+    function addToGarage(car) {
+        if (!garage.includes(car)) {
+            garage.push(car);
+            alert(`${car} added to your garage!`);
+        } else {
+            alert(`${car} is already in your garage!`);
+        }
+    }
+
+    function startRace(car) {
+        // Store the selected car in localStorage
+        localStorage.setItem('selectedCar', car);
+
+        // Redirect to race.html
+        window.location.href = 'race.html';
+    }
+</script>
+
+</body>
+</html>
+
+

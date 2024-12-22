@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Track</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #004d00, #00ff00);
+            color: limegreen;
+            text-align: center;
+        }
+
+        .ribbon {
+            background-color: #222;
+            color: limegreen;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ribbon a {
+            color: limegreen;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        .race-container {
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .car-details {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .race-result {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: limegreen;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="ribbon">
+        <a href="index.html">Home</a>
+        <a href="car-collection.html">Car Collection</a>
+        <a href="garage.html">My Garage</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <div class="race-container">
+        <h1>Race Track</h1>
+        <p class="car-details">Your car: <span id="selectedCar">None</span></p>
+        <button onclick="startRace()">Start Race</button>
+        <p class="race-result" id="raceResult"></p>
+    </div>
+
+    <script>
+        // Display the selected car
+        document.addEventListener('DOMContentLoaded', () => {
+            const selectedCar = localStorage.getItem('selectedCar');
+            const carElement = document.getElementById('selectedCar');
+            if (selectedCar) {
+                carElement.textContent = selectedCar;
+            } else {
+                carElement.textContent = 'No car selected! Go back and choose one.';
+            }
+        });
+
+        // Simulate a race
+        function startRace() {
+            const raceResult = document.getElementById('raceResult');
+            const outcomes = ['You win!', 'You lose!', 'It\'s a draw!'];
+            const randomOutcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+
+            if (!localStorage.getItem('selectedCar')) {
+                raceResult.textContent = 'No car selected. Please choose a car to race!';
+            } else {
+                raceResult.textContent = randomOutcome;
+            }
+        }
+    </script>
+</body>
+</html>
+

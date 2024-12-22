@@ -1,0 +1,247 @@
+<div class="ribbon">
+    <a href="index.html">Home</a>
+    <a href="car-collection.html">Car Collection</a>
+    <a href="garage.html">My Garage</a>
+    <a href="login.html">Login</a>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Wheels Collector's Garage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #004d00, #00ff00);
+            color: limegreen;
+            text-align: center;
+        }
+
+        header {
+            background-color: #00ff00;
+            color: black;
+            padding: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .ribbon {
+            background-color: #222;
+            color: limegreen;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ribbon a {
+            color: limegreen;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .ribbon a:hover {
+            text-decoration: underline;
+        }
+
+        .main-banner {
+            background: url('https://example.com/hotwheels-banner.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .main-banner h1 {
+            font-size: 3rem;
+        }
+
+        .main-banner p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .auth-buttons {
+            margin-top: 20px;
+        }
+
+        .auth-buttons button {
+            background-color: limegreen;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #fff;
+        }
+
+        .collection {
+            padding: 40px 20px;
+        }
+
+        .collection h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #222;
+            border: 2px solid limegreen;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: left;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .card button {
+            background-color: limegreen;
+            color: black;
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background-color: #fff;
+        }
+
+        .footer {
+            background-color: #00ff00;
+            color: black;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <marquee>🚗 Welcome to the Ultimate Hot Wheels Collector's Garage! 🚗</marquee>
+</header>
+
+<div class="ribbon">
+    <a href="#garage">My Garage</a>
+    <a href="#collection">Car Collection</a>
+</div>
+
+<section class="main-banner">
+    <h1>Hot Wheels Collector's Garage</h1>
+    <p>Select any Hot Wheels car ever made, add it to your garage, or race against a bot on our exclusive tracks!</p>
+    <div class="auth-buttons">
+        <button onclick="login()">Login</button>
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+</section>
+
+<section id="collection" class="collection">
+    <h2>Browse and Add to Your Garage</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Turbo Blast</h3>
+            <p>High-speed classic car with neon finishes.</p>
+            <button onclick="addToGarage('Turbo Blast')">Add to Garage</button>
+            <button onclick="startRace('Turbo Blast')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Classic Racer</h3>
+            <p>A vintage car built for nostalgia.</p>
+            <button onclick="addToGarage('Classic Racer')">Add to Garage</button>
+            <button onclick="startRace('Classic Racer')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Off-Road Monster</h3>
+            <p>Perfect for rugged terrains and wild adventures.</p>
+            <button onclick="addToGarage('Off-Road Monster')">Add to Garage</button>
+            <button onclick="startRace('Off-Road Monster')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Supercharged Racer</h3>
+            <p>Top-speed racer with cutting-edge aerodynamics.</p>
+            <button onclick="addToGarage('Supercharged Racer')">Add to Garage</button>
+            <button onclick="startRace('Supercharged Racer')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Lightning Strike</h3>
+            <p>A dazzling car with unmatched speed and control.</p>
+            <button onclick="addToGarage('Lightning Strike')">Add to Garage</button>
+            <button onclick="startRace('Lightning Strike')">Race!</button>
+        </div>
+        <div class="card">
+            <h3>Road Warrior</h3>
+            <p>Built for endurance and ultimate challenges.</p>
+            <button onclick="addToGarage('Road Warrior')">Add to Garage</button>
+            <button onclick="startRace('Road Warrior')">Race!</button>
+        </div>
+        <!-- Add more cars as needed -->
+    </div>
+</section>
+
+<script>
+    const garage = [];
+
+    function login() {
+        alert('Redirecting to login page...');
+    }
+
+    function signUp() {
+        alert('Redirecting to sign-up page...');
+    }
+
+    function addToGarage(car) {
+        if (!garage.includes(car)) {
+            garage.push(car);
+            alert(`${car} added to your garage!`);
+        } else {
+            alert(`${car} is already in your garage!`);
+        }
+    }
+
+    function startRace(car) {
+        alert(`Starting a race with ${car} against a bot!`);
+        // Add race logic here
+    }
+</script>
+
+<footer class="footer">
+    <p>Contact us at: <a href="mailto:hotwheelsgarage@example.com">hotwheelsgarage@example.com</a> | Call: 123-456-7890</p>
+    <p>Follow us on: <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
+</footer>
+
+</body>
+</html>
+
+
